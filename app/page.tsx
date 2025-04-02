@@ -255,7 +255,7 @@ export default function Home() {
                       <td className="px-6 border-r">
                         <Badge variant={
                           investigation.status === 'active' ? 'default' :
-                          investigation.status === 'completed' ? 'secondary' :
+                          // investigation.status === 'completed' ? 'secondary' :
                           investigation.status === 'paused' ? 'outline' :
                           'destructive'
                         }>
