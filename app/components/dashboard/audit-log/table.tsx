@@ -43,12 +43,6 @@ const AuditLogTableHeader: React.FC<AuditLogTableHeaderProps> = ({}) => {
                 </TableHead>
                 <TableHead className="w-[200px]">
                     <div className="flex items-center gap-2">
-                        <Users className="h-4 w-4" />
-                        People Impact
-                    </div>
-                </TableHead>
-                <TableHead className="w-[200px]">
-                    <div className="flex items-center gap-2">
                         <Brain className="h-4 w-4" />
                         AI Context
                     </div>
@@ -99,15 +93,6 @@ const AuditLogTableRow: React.FC<AuditLogTableRowProps> = ({ entry }) => {
                 <div className="flex items-start gap-2">
                     <span className="text-sm">{entry.description}</span>
                     <span className="text-xs text-muted-foreground">ID: {entry.id}</span>
-                </div>
-            </TableCell>
-            <TableCell>
-                <div className="flex flex-wrap gap-1">
-                    {entry.peopleImpact.map((impact, index) => (
-                        <Badge key={index} variant="secondary" className="text-xs">
-                            {impact}
-                        </Badge>
-                    ))}
                 </div>
             </TableCell>
             <TableCell>

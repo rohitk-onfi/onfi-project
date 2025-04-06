@@ -5,8 +5,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Search, MoreVertical, Plus, FileText, Settings, Database } from "lucide-react";
-import { Reference } from "@/app/types";
-import { references } from "@/app/config/constants";
+import { Reference,references } from "@/app/components/workflow/data";
 
 interface ReferencesTableHeaderProps {}
 

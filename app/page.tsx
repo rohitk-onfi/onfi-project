@@ -270,7 +270,7 @@ export default function Home() {
                             </Button>
                           </DropdownMenuTrigger>
                           <DropdownMenuContent align="end" className="w-48">
-                            <DropdownMenuItem onClick={() => window.location.href = `/dashboard/${investigation.id}`}>
+                            <DropdownMenuItem onClick={() => window.location.href = `/dashboard`}>
                               <BarChart2 className="h-4 w-4 mr-2" />
                               View Dashboard
                             </DropdownMenuItem>
@@ -278,7 +278,7 @@ export default function Home() {
                               <Settings className="h-4 w-4 mr-2" />
                               Edit Pipeline
                             </DropdownMenuItem>
-                            <DropdownMenuItem onClick={() => window.location.href = `/costs/${investigation.id}`}>
+                            <DropdownMenuItem onClick={() => window.location.href = `/costs`}>
                               <DollarSign className="h-4 w-4 mr-2" />
                               Cost Analysis
                             </DropdownMenuItem>

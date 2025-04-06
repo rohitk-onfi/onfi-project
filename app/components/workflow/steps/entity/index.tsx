@@ -3,7 +3,7 @@
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { entityFiles, metadataColumns, samplingStrategies } from '@/app/config/constants';
+import { entityFiles, metadataColumns, samplingStrategies } from '@/app/components/workflow/data';
 import EntityConfig from './entity-config';
 import EntitySchema from './entity-schema';
 import SamplingStrategyTable from './sampling-strategy';

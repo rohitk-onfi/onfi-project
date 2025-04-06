@@ -1,20 +1,20 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BarChart2, Activity, ListChecks, History, PlayCircle } from "lucide-react";
-
-import Analytics from "@/app/components/dashboard/analytics";
+import DashboardView from "@/app/components/dashboard/dashboard-view";
 import AuditLog from "@/app/components/dashboard/audit-log";
 import CurrentlyRunning from "@/app/components/dashboard/running";
+import ChecklistManager from "@/app/components/dashboard/checklist";
 
 const Dashboard = () => {
     return (
         <div className="min-h-screen bg-background p-8">
             <div className="container mx-auto space-y-8">
-                <Tabs defaultValue="analytics" className="space-y-8">
+                <Tabs defaultValue="dashboard" className="space-y-8">
                     <TabsList className="bg-muted h-12 p-1 gap-1">
-                        <TabsTrigger value="analytics" className="gap-2">
+                        <TabsTrigger value="dashboard" className="gap-2">
                             <BarChart2 className="h-4 w-4" />
-                            Analytics
+                            Dashboard
                         </TabsTrigger>
                         <TabsTrigger value="checklist" className="gap-2">
                             <ListChecks className="h-4 w-4" />
@@ -34,19 +34,12 @@ const Dashboard = () => {
                         </TabsTrigger>
                     </TabsList>
 
-                    <TabsContent value="analytics" className="space-y-8">
-                        <Analytics />
+                    <TabsContent value="dashboard" className="space-y-8">
+                        <DashboardView />
                     </TabsContent>
 
                     <TabsContent value="checklist">
-                        <Card>
-                            <CardHeader>
-                                <CardTitle>Investigation Checklist</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p>Checklist content will be displayed here</p>
-                            </CardContent>
-                        </Card>
+                        <ChecklistManager />
                     </TabsContent>
 
                     <TabsContent value="transactions">
@@ -71,6 +64,6 @@ const Dashboard = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Dashboard;

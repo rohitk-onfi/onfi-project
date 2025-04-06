@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { UserRole, User } from "@/app/types";
+import { UserRole, User } from "@/app/components/workflow/data";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";

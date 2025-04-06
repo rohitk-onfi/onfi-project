@@ -1,40 +1,207 @@
-import { AlertTriangle, BarChart2, Activity, Users } from "lucide-react";
-import { AnalyticsCardProps } from "@/app/components/dashboard/analytics/AnalyticsCard";
+import { Database, ListChecks, DollarSign, Clock, Timer } from "lucide-react";
 
-export const performanceData = [
-    { date: "2024-03-15", compliance: 95, alerts: 8, reports: 15 },
-    { date: "2024-03-16", compliance: 97, alerts: 5, reports: 12 },
-    { date: "2024-03-17", compliance: 94, alerts: 10, reports: 18 },
-    { date: "2024-03-18", compliance: 98, alerts: 3, reports: 14 },
-    { date: "2024-03-19", compliance: 96, alerts: 7, reports: 16 },
-    { date: "2024-03-20", compliance: 99, alerts: 2, reports: 13 },
-    { date: "2024-03-21", compliance: 97, alerts: 4, reports: 15 },
+export interface UsageStats {
+    label: string;
+    value: string;
+    change: string;
+    period: string;
+    icon: React.ElementType;
+}
+
+export const usageStats: UsageStats[] = [
+    {
+        label: "Entities Processed",
+        value: "2,845",
+        change: "+8%",
+        period: "vs. last month",
+        icon: Database,
+    },
+    {
+        label: "Checklist Items Run",
+        value: "12,456",
+        change: "+12%",
+        period: "vs. last month",
+        icon: ListChecks,
+    },
+    {
+        label: "Avg. Cost per Entity",
+        value: "$2.45",
+        change: "-5%",
+        period: "vs. last month",
+        icon: DollarSign,
+    },
+    {
+        label: "Avg. Time per Entity",
+        value: "45s",
+        change: "-10%",
+        period: "vs. last month",
+        icon: Clock,
+    },
+    {
+        label: "Avg. Time per Checklist",
+        value: "12s",
+        change: "-8%",
+        period: "vs. last month",
+        icon: Timer,
+    },
+];
+export interface InProgressItem {
+    name: string;
+    progress: number;
+    eta: string;
+    status: "running" | "paused";
+}
+
+export const inProgressItems: InProgressItem[] = [
+    {
+        name: "Transaction Pattern Analysis",
+        progress: 65,
+        eta: "45 minutes",
+        status: "running",
+    },
+    {
+        name: "Customer Risk Assessment",
+        progress: 85,
+        eta: "15 minutes",
+        status: "running",
+    },
+    {
+        name: "Regulatory Compliance Check",
+        progress: 40,
+        eta: "paused",
+        status: "paused",
+    },
 ];
 
-export const entityDistribution = [
-    { name: "Transactions", count: 1250, percentage: 45 },
-    { name: "Customers", count: 850, percentage: 30 },
-    { name: "Regulations", count: 450, percentage: 16 },
-    { name: "Products", count: 250, percentage: 9 },
+export interface CriticalChecklistItem {
+    item: string;
+    failureRate: string;
+    impact: "high" | "medium" | "low";
+    affectedCompanies: number;
+}
+export const criticalChecklist: CriticalChecklistItem[] = [
+    {
+        item: "KYC Documentation Verification",
+        failureRate: "15.3%",
+        impact: "high",
+        affectedCompanies: 245,
+    },
+    {
+        item: "Transaction Limit Compliance",
+        failureRate: "12.8%",
+        impact: "high",
+        affectedCompanies: 198,
+    },
+    {
+        item: "Regulatory Reporting Deadlines",
+        failureRate: "10.5%",
+        impact: "medium",
+        affectedCompanies: 156,
+    },
 ];
 
-export interface RecentAlert {
+export interface DailyCheckStats {
+    date: string;
+    flagsRaised: number;
+    flagsMitigated: number;
+    escalations: number;
+    passed: number;
+    failed: number;
+    pending: number;
+}
+
+export const dailyCheckStats: DailyCheckStats[] = [
+    {
+        date: "03/18",
+        flagsRaised: 245,
+        flagsMitigated: 220,
+        escalations: 25,
+        passed: 245,
+        failed: 12,
+        pending: 8,
+    },
+    {
+        date: "03/19",
+        flagsRaised: 268,
+        flagsMitigated: 240,
+        escalations: 28,
+        passed: 268,
+        failed: 15,
+        pending: 5,
+    },
+    {
+        date: "03/20",
+        flagsRaised: 256,
+        flagsMitigated: 235,
+        escalations: 21,
+        passed: 256,
+        failed: 8,
+        pending: 12,
+    },
+    {
+        date: "03/21",
+        flagsRaised: 289,
+        flagsMitigated: 260,
+        escalations: 29,
+        passed: 289,
+        failed: 10,
+        pending: 6,
+    },
+    {
+        date: "03/22",
+        flagsRaised: 275,
+        flagsMitigated: 245,
+        escalations: 30,
+        passed: 275,
+        failed: 14,
+        pending: 9,
+    },
+    {
+        date: "03/23",
+        flagsRaised: 298,
+        flagsMitigated: 270,
+        escalations: 28,
+        passed: 298,
+        failed: 9,
+        pending: 7,
+    },
+    {
+        date: "03/24",
+        flagsRaised: 312,
+        flagsMitigated: 285,
+        escalations: 27,
+        passed: 312,
+        failed: 11,
+        pending: 4,
+    },
+];
+
+export interface AlertItem {
+    id: string;
     title: string;
     time: string;
     severity: "high" | "medium" | "low";
 }
 
-export const recentAlerts: RecentAlert[] = [
-    { title: "High-risk Transaction Detected", time: "10 minutes ago", severity: "high" },
-    { title: "Compliance Check Failed", time: "25 minutes ago", severity: "medium" },
-    { title: "New Regulatory Update", time: "1 hour ago", severity: "low" },
-];
-
-export const systemStatus = [
-    { name: "API Endpoints", status: "operational" },
-    { name: "Database", status: "operational" },
-    { name: "Authentication", status: "operational" },
-    { name: "Processing Queue", status: "degraded" },
+export const recentAlerts: AlertItem[] = [
+    {
+        id: "1",
+        title: "High-risk Transaction Pattern Detected",
+        time: "10 minutes ago",
+        severity: "high",
+    },
+    {
+        id: "2",
+        title: "Compliance Check Failed: Customer Due Diligence",
+        time: "25 minutes ago",
+        severity: "high",
+    },
+    {
+        id: "3",
+        title: "New Regulatory Update Available",
+        time: "1 hour ago",
+        severity: "medium",
+    },
 ];
 
 export interface RunningInvestigation {
@@ -163,37 +330,62 @@ export const auditLogData: AuditLogEntry[] = [
     },
 ];
 
-export const analyticsCards: AnalyticsCardProps[] = [
+export interface ChecklistItem {
+    id: string;
+    name: string;
+    description: string;
+    status: "pending" | "in-progress" | "completed";
+    lastRun: string;
+    nextRun: string;
+    owner: string;
+}
+
+export interface Checklist {
+    id: string;
+    title: string;
+    description: string;
+    items: ChecklistItem[];
+}
+
+export const initialChecklists: Checklist[] = [
     {
-        title: "Total Investigations",
-        value: "2,850",
-        change: "12.5%",
-        direction: "positive",
-        versus: "last month",
-        icon: <BarChart2 className="h-4 w-4 text-muted-foreground" />,
+        id: "1",
+        title: "Daily Compliance Checks",
+        description: "Standard checks performed daily for regulatory compliance",
+        items: [
+            {
+                id: "1-1",
+                name: "Transaction Monitoring",
+                description: "Monitor all transactions for suspicious patterns",
+                status: "completed",
+                lastRun: "2024-03-22 09:00",
+                nextRun: "2024-03-23 09:00",
+                owner: "John Smith",
+            },
+            {
+                id: "1-2",
+                name: "Customer Due Diligence",
+                description: "Review customer profiles and risk ratings",
+                status: "in-progress",
+                lastRun: "2024-03-22 10:00",
+                nextRun: "2024-03-23 10:00",
+                owner: "Sarah Johnson",
+            },
+            {
+                id: "1-3",
+                name: "Regulatory Reporting",
+                description: "Generate and submit required regulatory reports",
+                status: "pending",
+                lastRun: "2024-03-22 11:00",
+                nextRun: "2024-03-23 11:00",
+                owner: "Mike Wilson",
+            },
+        ],
     },
     {
-        title: "Active Alerts",
-        value: "24",
-        change: "8.2%",
-        direction: "negative",
-        versus: "last week",
-        icon: <AlertTriangle className="h-4 w-4 text-muted-foreground" />,
-    },
-    {
-        title: "Compliance Rate",
-        value: "97.8%",
-        change: "2.1%",
-        direction: "positive",
-        versus: "target",
-        icon: <Activity className="h-4 w-4 text-muted-foreground" />,
-    },
-    {
-        title: "Total Users",
-        value: "1,234",
-        change: "4.3%",
-        direction: "positive",
-        versus: "last month",
-        icon: <Users className="h-4 w-4 text-muted-foreground" />,
+        id: "2",
+        title: "Weekly Risk Assessments",
+        description: "Comprehensive risk evaluation procedures performed weekly",
+        items: [],
     },
 ];

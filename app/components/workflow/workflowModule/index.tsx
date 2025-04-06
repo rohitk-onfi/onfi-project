@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { WorkflowStep } from '@/app/types';
-import { initialWorkflowSteps } from '@/app/config/constants';
+import { WorkflowStep,initialWorkflowSteps } from '@/app/components/workflow/data';
 import { WorkflowSidebar } from '@/app/components/workflow/WorkflowSidebar';
 import DefineEntities from '@/app/components/workflow/steps/entity';
-import { ElaborateScope } from '@/app/components/workflow/steps/ElaborateScope';
-import CrossCheckReferences from '@/app/components/workflow/steps/CrossCheckReferences';
+import ElaborateScope from '@/app/components/workflow/steps/elaborate-scope';
+import CrossCheckReferences from '@/app/components/workflow/steps/cross-check-references';
 import Reporting from '@/app/components/workflow/steps/reporting';
 
 interface WorkflowSectionProps {

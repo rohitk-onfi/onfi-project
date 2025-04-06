@@ -4,8 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { WorkflowStep } from '@/app/types';
-import { statusConfig } from '@/app/config/constants';
+import { WorkflowStep,statusConfig } from '@/app/components/workflow/data';
 
 interface WorkflowSidebarProps {
   steps: WorkflowStep[];

@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Table, TableHeader, TableBody, TableRow, TableCell, TableHead } from "@/components/ui/table";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Plus } from "lucide-react";
-import { EntityFile } from "@/app/types";
+import { EntityFile } from "@/app/components/workflow/data";
 
 interface EntityConfigHeaderProps {}
 

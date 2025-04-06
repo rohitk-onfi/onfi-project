@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableHeader, TableBody, TableRow, TableCell, TableHead } from "@/components/ui/table";
 import { Plus } from "lucide-react";
-import { SamplingStrategy } from "@/app/types";
+import { SamplingStrategy } from "@/app/components/workflow/data";
 
 interface SamplingStrategyTableHeaderProps {}
 

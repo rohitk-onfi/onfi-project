@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Workflow, Users, Brain } from 'lucide-react';
-import { User } from '@/app/types';
-import { mockUsers } from '@/app/config/constants';
+import { User,mockUsers } from '@/app/components/workflow/data';
 import UserManagement from '@/app/components/workflow/users';
 import AISettings from '@/app/components/workflow/ai-settings';
 import WorkflowSection from '@/app/components/workflow/workflowModule';
+import Pipeline from '@/app/components/workflow/pipeline';
 
 interface WorkflowModuleProps {}
 
@@ -17,6 +17,8 @@ const WorkflowModule:React.FC<WorkflowModuleProps> = ({}) => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto py-8 px-4">
+        <Pipeline />
+        
         <Tabs value={currentTab} onValueChange={setCurrentTab} className="space-y-8">
           <div className="border-b">
             <TabsList className="w-full justify-start h-12 bg-transparent">

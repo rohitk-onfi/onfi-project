@@ -1,7 +1,6 @@
 'use client';
 
 import { AlertCircle } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
 
 export interface AlertProps {
   title: string;
@@ -23,13 +22,6 @@ export function Alert({ title, time, severity }: AlertProps) {
           <p className="text-sm text-muted-foreground">{time}</p>
         </div>
       </div>
-      <Badge variant={
-        severity === 'high' ? 'destructive' :
-        severity === 'medium' ? 'default' :
-        'secondary'
-      }>
-        {severity.toUpperCase()}
-      </Badge>
     </div>
   );
 }

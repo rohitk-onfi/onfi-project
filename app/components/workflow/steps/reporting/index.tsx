@@ -1,6 +1,6 @@
 "use client";
 
-import { notificationRules, reportFormats } from "@/app/config/constants";
+import { notificationRules, reportFormats } from "@/app/components/workflow/data";
 import NotifRules from "./notif-rules";
 import ReportTemps from "./report-temps";
 

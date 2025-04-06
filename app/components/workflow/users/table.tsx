@@ -5,9 +5,8 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { Shield, Users2, Key, Trash2, Clock } from "lucide-react";
 import { cn } from "@/lib/utils";
 import React from "react";
-import { User, UserRole } from "@/app/types";
+import { User, UserRole, roleConfig } from "@/app/components/workflow/data";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { roleConfig } from "@/app/config/constants";
 
 interface UserTableHeaderProps {}
 

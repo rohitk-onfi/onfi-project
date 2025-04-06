@@ -3,9 +3,8 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Plus } from 'lucide-react';
-import { User, UserRole } from '@/app/types';
+import { User, UserRole } from '@/app/components/workflow/data';
 import UsersTable from './table';
 import UserCreator from './user-creator';
 
